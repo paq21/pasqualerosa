@@ -41,8 +41,7 @@ html{
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-top: 5px;
+    margin-inline-end: 0px;    
 }
 
 
@@ -64,20 +63,24 @@ background-color: #F2F2F2;
 /* Apply the "Suisse Int'l" font to your body text */
 * {
     font-family: 'Suisse-Intl', sans-serif;
+    font-size: 15pt;
+    line-height: 18pt;
+   
 }
 
 header {
     position: sticky;
     top: 0;
-    background-color: #F2F2F2;/* Add a background color to the header */
+    z-index: 2000000000;
 }
 
 h1 {
-    font-size: 600%; /* Adjust the value to make it bigger */
     font-kerning: normal;
     font-style: bold;
     margin: 0%;
     line-height: 80%;
+    padding-left: 15px;
+    
 }
 /* Style for the h1 link */
 h1 a {
@@ -121,7 +124,6 @@ a:hover { text-decoration: none;
 }
 
 p { 
-    font-size: 140%;
     display: block;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -162,7 +164,7 @@ p {
 .project-images img {
     max-width: 100%;
     max-height: 100%; /* Fit the images within the available height */
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 
@@ -183,8 +185,8 @@ p {
 
 /* Style for the project details (left column) */
 .col-1-details {
-    float: left;
     padding: 5px;
+    padding-left: 20px;
     width: 16.66%;
 }
 
@@ -199,28 +201,105 @@ p {
 /* Style for the project description */
 [class*="col-"]{
     float: left;
-    padding: 5px;
 }
 .col-2-description{
-    width: 50%;
+    width: 100%;
+    padding: 5px;
 }
 .col-3-description{
-    width: 50%;
+
 }
 
+
+
+.index {
+    position:fixed;
+    background-color: #ff4040;
+    padding-top: 55px;
+    padding-right: 30px;
+    padding-left: 20px;
+    width: 16.66%;
+    top: 0;
+    left: -16.66%;
+    float:right;
+    height: 102%;
+    z-index: 1400000;
+    overflow-y: scroll;
+   transition: 1s;
+   }
+
+   .index.active{
+     left: 0%;
+     padding-top: 20px;
+     transition: 1s;
+     background-color: #ff4040;
+   }
+
+   #nav_bar{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 40px;
+    top: 0;
+    left: 0;
+    z-index: 1900000000;
+        text-transform: uppercase;
+    height: 102%;
+    width: 20px;
+    cursor: pointer;
+    background: #ff4040;
+    transition: 1s;
+   
+   }
+  
+   #nav_bar.active {
+    /* left:44.5%;*/
+    padding-top: 80px;
+
+    left: 14.91%;
+    transition: 1s;
+    background-color:#ff4040;
+    
+   }
+  
+   #index_button{
+  display: block;
+transform: rotate(-90deg);
+  /*transform-origin: top left;
+  /* Note: for a CLOCKWISE rotation, use the commented-out
+     transform instead of this one. */
+  /*transform: rotate(-90deg) translate(-30%);
+  /* transform: rotate(90deg) translate(0, -100%); */
+ /* margin-top: 5%;
+ 
+ 
+  /* Not vital, but possibly a good idea if the element you're rotating contains
+     text and you want a single long vertical line of text and the pre-rotation
+     width of your element is small enough that the text wraps: */
+  /*white-space: nowrap;*/
+   }
+#index_text{
+    
+        border-style: solid;
+        border-width: 0px;
+        border-top-width: 1px;
+      
+}
 /* Style for the dropdown menu */
 .dropdown {
+    text-transform: uppercase;
     position: absolute;
     top: 2%; /* Adjust the top position to your preference */
     right: 0%; /* Adjust the right position to your preference */
     width: 15%;
-    font-size: 150%;
     text-align: right;
     display: inline-block;
 }
 
 /* Style for the dropdown content (hidden by default) */
 .dropdown-content {
+    text-transform: uppercase;
+
     display: none;
     position: absolute;
     text-align: left;
@@ -289,6 +368,10 @@ p {
     animation-play-state: running;
 }*/
 @media only screen and (max-width: 768px){
+    *{
+        font-size: 12pt;
+        line-height: 14pt;
+    }
     .col-2-description{
         width: 100%;
         padding-bottom: 0;
@@ -316,29 +399,106 @@ h2 {
 }
 .col-1-details {
     float: none; /* Remove the float to stack elements */
-    width: 100%; /* Occupy full width */
-}
+    width: 100%; /* Occupy full width */}
 .project-description {
     width: 100%; /* Occupy full width */
     float: none; /* Remove the float to stack elements */
+    padding-left: 20px;
 }
-.project-text {
-    font-size: 12pt;
-    line-height: 19pt;
-}
+
 .dropdown {
     right: 0; /* Set the right position to 0 to avoid overflowing on mobile */
     width: auto; /* Let it occupy the width it needs */
 }
-#animated-name{
-    font-size: 40pt;
+
+.index {
+    position:fixed;
+    background-color: #ff4040;
+    padding-top: 55px;
+    padding-right: 30px;
+    padding-left: 20px;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    float:right;
+    height: 102%;
+    z-index: 1400000;
+    overflow-y: scroll;
+   transition: 1s;
+   }
+
+   .index.active{
+     left: 0%;
+     padding-top: 20px;
+     transition: 1s;
+     background-color: #ff4040;
+   }
+
+   #nav_bar{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 40px;
+    top: 0;
+    left: 0;
+    z-index: 1900000000;
+        text-transform: uppercase;
+    height: 102%;
+    width: 20px;
+    cursor: pointer;
+    background: #ff4040;
+    transition: 1s;
+   
+   }
+  
+   #nav_bar.active {
+    /* left:44.5%;*/
+    padding-top: 80px;
+
+    left: 95%;
+    transition: 1s;
+    background-color:#ff4040;
+    
+   }
+  
+   #index_button{
+  display: block;
+transform: rotate(-90deg);
+  /*transform-origin: top left;
+  /* Note: for a CLOCKWISE rotation, use the commented-out
+     transform instead of this one. */
+  /*transform: rotate(-90deg) translate(-30%);
+  /* transform: rotate(90deg) translate(0, -100%); */
+ /* margin-top: 5%;
+ 
+ 
+  /* Not vital, but possibly a good idea if the element you're rotating contains
+     text and you want a single long vertical line of text and the pre-rotation
+     width of your element is small enough that the text wraps: */
+  /*white-space: nowrap;*/
+   }
+#index_text{
+    
+        border-style: solid;
+        border-width: 0px;
+        border-top-width: 1px;
+      
 }
+.dropdown {
+    right: 0; /* Set the right position to 0 to avoid overflowing on mobile */
+    width: auto; /* Let it occupy the width it needs */
+    z-index:200000000000000;
+}
+
 }
 
 
 @media only screen and (max-width: 400px) {
     /* Your responsive CSS styles for screens up to 400px wide */
-
+    *{
+        font-size: 12pt;
+        line-height: 14pt;
+    }
     .col-2-description{
         width: 100%;
         padding-bottom: 0;
@@ -361,6 +521,7 @@ h2 {
 }
 .project {
     flex-direction: column; /* Stack elements on smaller screens */
+    padding-left: 20px;
 }
 .project-images{
     height: 30vh;
@@ -376,6 +537,7 @@ h2 {
 .project-description {
     width: 100%; /* Occupy full width */
     float: none; /* Remove the float to stack elements */
+    padding-left: 15px;
 }
 
 .project-text {
@@ -385,11 +547,81 @@ h2 {
 .dropdown {
     right: 0; /* Set the right position to 0 to avoid overflowing on mobile */
     width: auto; /* Let it occupy the width it needs */
+    z-index:200000000000000;
 }
-#animated-name{
-    font-size: 40pt;
-}
+.index {
+    position:fixed;
+    background-color: #ff4040;
+    padding-top: 55px;
+    padding-right: 30px;
+    padding-left: 20px;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    float:right;
+    height: 102%;
+    z-index: 1400000;
+    overflow-y: scroll;
+   transition: 1s;
+   }
 
+   .index.active{
+     left: 0%;
+     padding-top: 20px;
+     transition: 1s;
+     background-color: #ff4040;
+   }
+
+   #nav_bar{
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 40px;
+    top: 0;
+    left: 0;
+    z-index: 1900000000;
+        text-transform: uppercase;
+    height: 102%;
+    width: 20px;
+    cursor: pointer;
+    background: #ff4040;
+    transition: 1s;
+   
+   }
+  
+   #nav_bar.active {
+    /* left:44.5%;*/
+    padding-top: 80px;
+
+    left: 95%;
+    transition: 1s;
+    background-color:#ff4040;
+    
+   }
+  
+   #index_button{
+  display: block;
+transform: rotate(-90deg);
+  /*transform-origin: top left;
+  /* Note: for a CLOCKWISE rotation, use the commented-out
+     transform instead of this one. */
+  /*transform: rotate(-90deg) translate(-30%);
+  /* transform: rotate(90deg) translate(0, -100%); */
+ /* margin-top: 5%;
+ 
+ 
+  /* Not vital, but possibly a good idea if the element you're rotating contains
+     text and you want a single long vertical line of text and the pre-rotation
+     width of your element is small enough that the text wraps: */
+  /*white-space: nowrap;*/
+   }
+#index_text{
+    
+        border-style: solid;
+        border-width: 0px;
+        border-top-width: 1px;
+      
+}
 body {
     cursor: none;
   }
